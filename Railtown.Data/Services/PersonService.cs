@@ -29,26 +29,35 @@ namespace Railtown.Data.Services
 
         public async Task<PersonsFurthestApart> GetPersonsFurthestApartAsync()
         {
+            var personsApart = new PersonsFurthestApart();
+
             var persons = await personRepository.GetAllPersonsAsync();
 
-            var distancesBetween = new Dictionary<(Person, Person), double>();
-
-            foreach (var person1 in persons)
+            if (persons.Count == 1)
             {
-                foreach (var person2 in persons)
-                {
-                    var distance = GetDistanceBetweenPersons(person1, person2);
-                    distancesBetween.Add((person1, person2), distance);
-                }
+                personsApart.Person1 = persons[0];
+                personsApart.Person2 = persons[0];
+                return personsApart;
             }
-
-            var (personA, personB) = distancesBetween.Aggregate((p1, p2) => p1.Value > p2.Value ? p1 : p2).Key;
-
-            var personsApart = new PersonsFurthestApart()
+            else if (persons.Count >= 2)
             {
-                Person1 = personA,
-                Person2 = personB
-            };
+                var distancesBetween = new Dictionary<(Person, Person), double>();
+
+                foreach (var person1 in persons)
+                {
+                    foreach (var person2 in persons)
+                    {
+                        var distance = GetDistanceBetweenPersons(person1, person2);
+                        distancesBetween.Add((person1, person2), distance);
+                    }
+                }
+
+                var (personA, personB) = distancesBetween.Aggregate((p1, p2) => p1.Value > p2.Value ? p1 : p2).Key;
+
+                personsApart.Person1 = personA;
+                personsApart.Person2 = personB;
+                return personsApart;
+            }
 
             return personsApart;
         }

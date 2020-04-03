@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Railtown.Data", "Railtown.D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Railtown.API", "Railtown.API\Railtown.API.csproj", "{FFD0C70F-447A-4416-A9B2-A22AA554015B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Railtown.Data.UnitTest", "Railtown.Data.UnitTest\Railtown.Data.UnitTest.csproj", "{F639A089-4F89-440A-94F7-1FA2FAF11161}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{FFD0C70F-447A-4416-A9B2-A22AA554015B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FFD0C70F-447A-4416-A9B2-A22AA554015B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FFD0C70F-447A-4416-A9B2-A22AA554015B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F639A089-4F89-440A-94F7-1FA2FAF11161}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F639A089-4F89-440A-94F7-1FA2FAF11161}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F639A089-4F89-440A-94F7-1FA2FAF11161}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F639A089-4F89-440A-94F7-1FA2FAF11161}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
