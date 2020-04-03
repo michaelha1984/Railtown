@@ -31,6 +31,7 @@ namespace Railtown.Data.Services
         {
             var personsApart = new PersonsFurthestApart();
 
+            
             var persons = await personRepository.GetAllPersonsAsync();
 
             if (persons.Count == 1)

@@ -146,7 +146,7 @@ namespace Railtown.Data.UnitTest.Service
                     {
                         Geo = new Geo() {
                             Lat = -37.3159,
-                            Long = 81.1496
+                            Long = 90
                         }
                     }
                 },
@@ -167,8 +167,8 @@ namespace Railtown.Data.UnitTest.Service
                     Address = new Address()
                     {
                         Geo = new Geo() {
-                            Lat = -43.9509, 
-                            Long = -44.4618 // P2.Lat -10
+                            Lat = -37.3159,
+                            Long = -90
                         }
                     }
                 }
@@ -202,7 +202,7 @@ namespace Railtown.Data.UnitTest.Service
                     Address = new Address()
                     {
                         Geo = new Geo() {
-                            Lat = -37.3159,
+                            Lat = 90,
                             Long = 81.1496
                         }
                     }
@@ -224,8 +224,8 @@ namespace Railtown.Data.UnitTest.Service
                     Address = new Address()
                     {
                         Geo = new Geo() {
-                            Lat = -33.9509, // P2.Lat +10
-                            Long = -34.4618 
+                            Lat = -90,
+                            Long = 81.1496
                         }
                     }
                 }
