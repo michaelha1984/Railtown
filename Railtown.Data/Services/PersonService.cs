@@ -53,10 +53,11 @@ namespace Railtown.Data.Services
                     }
                 }
 
-                var (personA, personB) = distancesBetween.Aggregate((p1, p2) => p1.Value > p2.Value ? p1 : p2).Key;
+                var keyValuePair = distancesBetween.Aggregate((p1, p2) => p1.Value > p2.Value ? p1 : p2);
 
-                personsApart.Person1 = personA;
-                personsApart.Person2 = personB;
+                personsApart.Person1 = keyValuePair.Key.Item1;
+                personsApart.Person2 = keyValuePair.Key.Item2;
+                personsApart.Distance = keyValuePair.Value;
                 return personsApart;
             }
 
