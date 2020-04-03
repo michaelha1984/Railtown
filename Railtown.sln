@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29926.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Railtown", "Railtown\Railtown.csproj", "{B7E20C2A-C370-46DA-B3CD-72427C63E350}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Railtown.Data", "Railtown.Data\Railtown.Data.csproj", "{2B692BEF-BF6D-482A-BFAB-DCA10784C522}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B7E20C2A-C370-46DA-B3CD-72427C63E350}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7E20C2A-C370-46DA-B3CD-72427C63E350}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7E20C2A-C370-46DA-B3CD-72427C63E350}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7E20C2A-C370-46DA-B3CD-72427C63E350}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B692BEF-BF6D-482A-BFAB-DCA10784C522}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B692BEF-BF6D-482A-BFAB-DCA10784C522}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B692BEF-BF6D-482A-BFAB-DCA10784C522}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B692BEF-BF6D-482A-BFAB-DCA10784C522}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3F57CFCC-6405-44FF-9968-F266DDAA9E4F}
+	EndGlobalSection
+EndGlobal
