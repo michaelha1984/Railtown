@@ -6,7 +6,7 @@ namespace Railtown.Data.Models
 {
     public class Geo
     {
-        public string Lat { get; set; }
-        public string Long { get; set; }
+        public double Lat { get; set; }
+        public double Long { get; set; }
     }
 }
