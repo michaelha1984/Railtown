@@ -10,15 +10,12 @@ namespace Railtown
         static async Task Main(string[] args)
         {
             var personRepository = new PersonRepository();
-            var persons = await personRepository.GetAllPersonsAsync();
+            var personService = new PersonService(personRepository);
+          
+            var personsFurthestApart = await personService.GetPersonsFurthestApartAsync();
+            Console.WriteLine($"{personsFurthestApart.Person1.Name} " +
+                $"and {personsFurthestApart.Person2.Name} live the furthest apart.");
 
-            var geoService = new GeoService();
-            var distance = geoService.GetDistanceBetweenPersons(persons[0], persons[1]);
-
-            Console.WriteLine(distance);
-
-            var (person1, person2) = geoService.GetPersonsFurthestApart(persons);
-            Console.WriteLine($"{person1.Name} and {person2.Name} live the furthest apart.");
             Console.ReadKey();
         }
     }
