@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Railtown.Data.Models
+namespace Railtown.API.Models
 {
     public class Person
     {
         public string Name { get; set; }
         public Address Address { get; set; }
-        public Company Company { get; set; } // we could flatten this mappers if it was required
+        public string CompanyName { get; set; } 
         public string Phone { get; set; }
     }
 }

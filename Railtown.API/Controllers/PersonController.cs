@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using Railtown.API.Models;
 using Railtown.Data.Services;
 
 namespace Railtown.API.Controllers
@@ -12,17 +14,20 @@ namespace Railtown.API.Controllers
     public class PersonController : ControllerBase
     {
         private readonly IPersonService personService;
+        private readonly IMapper mapper;
 
-        public PersonController(IPersonService personService)
+        public PersonController(IPersonService personService,
+            IMapper mapper)
         {
             this.personService = personService;
+            this.mapper = mapper;
         }
 
         [HttpGet]
         public async Task<IActionResult> GetAsync()
         {
-            var result = await personService.GetPersonsFurthestApartAsync();
-
+            var persons = await personService.GetPersonsFurthestApartAsync();
+            var result = mapper.Map<PersonsFurthestApart>(persons);
             return Ok(result);
         }
     }
