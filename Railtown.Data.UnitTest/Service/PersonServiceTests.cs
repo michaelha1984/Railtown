@@ -88,7 +88,9 @@ namespace Railtown.Data.UnitTest.Service
             var personsFurthestApart = await personService.GetPersonsFurthestApartAsync();
 
             // Assert
-            Assert.AreEqual(personsFurthestApart.Person1.Name, personsFurthestApart.Person2.Name);
+            Assert.AreNotEqual(personsFurthestApart.Person1.Name, personsFurthestApart.Person2.Name);
+            Assert.AreEqual(personsFurthestApart.Person1.Address.Geo.Lat, personsFurthestApart.Person2.Address.Geo.Lat);
+            Assert.AreEqual(personsFurthestApart.Person1.Address.Geo.Long, personsFurthestApart.Person2.Address.Geo.Long);
         }
 
         [Test]

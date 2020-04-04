@@ -44,16 +44,20 @@ namespace Railtown.Data.Services
             {
                 var distancesBetween = new Dictionary<(Person, Person), double>();
 
-                foreach (var person1 in persons)
+                var queue = new Queue<Person>(persons);
+
+                while (queue.Count > 0)
                 {
-                    foreach (var person2 in persons)
+                    var person1 = queue.Dequeue();
+
+                    foreach (var person2 in queue)
                     {
                         var distance = GetDistanceBetweenPersons(person1, person2);
                         distancesBetween.Add((person1, person2), distance);
                     }
                 }
 
-                var keyValuePair = distancesBetween.Aggregate((p1, p2) => p1.Value > p2.Value ? p1 : p2);
+                var keyValuePair = distancesBetween.Aggregate((db1, db2) => db1.Value > db2.Value ? db1 : db2);
 
                 personsApart.Person1 = keyValuePair.Key.Item1;
                 personsApart.Person2 = keyValuePair.Key.Item2;
