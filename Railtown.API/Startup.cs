@@ -42,6 +42,10 @@ namespace Railtown.API
             {
                 app.UseDeveloperExceptionPage();
             }
+            else
+            {
+                app.UseExceptionHandler("/error");
+            }
 
             app.UseHttpsRedirection();
 

@@ -14,7 +14,7 @@ namespace Railtown.Data.Repository
             var client = new RestClient("https://jsonplaceholder.typicode.com/");
 
             var request = new RestRequest("users", DataFormat.Json);
-
+            
             var response = await client.GetAsync<List<Person>>(request);
             return response;
         }
