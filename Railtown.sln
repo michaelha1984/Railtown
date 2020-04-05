@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29926.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Railtown", "Railtown\Railtown.csproj", "{B7E20C2A-C370-46DA-B3CD-72427C63E350}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Railtown", "Railtown\Railtown.csproj", "{B7E20C2A-C370-46DA-B3CD-72427C63E350}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Railtown.Data", "Railtown.Data\Railtown.Data.csproj", "{2B692BEF-BF6D-482A-BFAB-DCA10784C522}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Railtown.Data", "Railtown.Data\Railtown.Data.csproj", "{2B692BEF-BF6D-482A-BFAB-DCA10784C522}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Railtown.API", "Railtown.API\Railtown.API.csproj", "{FFD0C70F-447A-4416-A9B2-A22AA554015B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Railtown.API", "Railtown.API\Railtown.API.csproj", "{FFD0C70F-447A-4416-A9B2-A22AA554015B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Railtown.Data.UnitTest", "Railtown.Data.UnitTest\Railtown.Data.UnitTest.csproj", "{F639A089-4F89-440A-94F7-1FA2FAF11161}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Railtown.Data.UnitTest", "Railtown.Data.UnitTest\Railtown.Data.UnitTest.csproj", "{F639A089-4F89-440A-94F7-1FA2FAF11161}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Railtown.API.FunctionTests", "Railtown.API.FunctionTests\Railtown.API.FunctionTests.csproj", "{7B5B8CF9-58C4-4CD5-879F-12534FB6D06E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{F639A089-4F89-440A-94F7-1FA2FAF11161}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F639A089-4F89-440A-94F7-1FA2FAF11161}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F639A089-4F89-440A-94F7-1FA2FAF11161}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B5B8CF9-58C4-4CD5-879F-12534FB6D06E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B5B8CF9-58C4-4CD5-879F-12534FB6D06E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B5B8CF9-58C4-4CD5-879F-12534FB6D06E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B5B8CF9-58C4-4CD5-879F-12534FB6D06E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
