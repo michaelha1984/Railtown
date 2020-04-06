@@ -30,8 +30,7 @@ namespace Railtown.Data.Services
         public async Task<PersonsFurthestApart> GetPersonsFurthestApartAsync()
         {
             var personsApart = new PersonsFurthestApart();
-
-            
+                       
             var persons = await personRepository.GetAllPersonsAsync();
 
             if (persons.Count == 1)

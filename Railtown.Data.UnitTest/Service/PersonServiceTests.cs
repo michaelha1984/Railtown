@@ -13,11 +13,6 @@ namespace Railtown.Data.UnitTest.Service
     [TestFixture]
     public class PersonServiceTests
     {
-        public PersonServiceTests()
-        {
-
-        }
-
         [Test]
         public async Task GetPersonsFurthestApartAsync_OnlyOnePerson_ReturnsPersonAsync()
         {
@@ -47,6 +42,7 @@ namespace Railtown.Data.UnitTest.Service
 
             // Assert
             Assert.AreEqual(personsFurthestApart.Person1.Name, personsFurthestApart.Person2.Name);
+            Assert.AreEqual(0, personsFurthestApart.Distance);
         }
 
         [Test]
