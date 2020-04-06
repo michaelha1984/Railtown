@@ -3,6 +3,7 @@ using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.Net;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,21 +13,21 @@ namespace Railtown.API.FunctionTests.Controllers
     public class PersonsControllerTests
     {
         private WebApplicationFactory<Startup> _factory;
+        private HttpClient _client;
 
         [OneTimeSetUp]
         public void OneTimeSetUp()
         {
             _factory = new WebApplicationFactory<Startup>();
+            _client = _factory.CreateClient();
         }
 
         [TestCase("/Person")]
         public async Task Get_Person_ReturnSuccessStatus(string url)
         {
             // Arrange
-            var client = _factory.CreateClient();
-
             // Act
-            var response = await client.GetAsync(url);
+            var response = await _client.GetAsync(url);
 
             //string responseBody = await response.Content.ReadAsStringAsync();
 
