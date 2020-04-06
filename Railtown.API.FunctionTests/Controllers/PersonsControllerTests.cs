@@ -1,24 +1,25 @@
 ﻿using Microsoft.AspNetCore.Mvc.Testing;
+using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
-using Xunit;
 
 namespace Railtown.API.FunctionTests.Controllers
 {
-    public class PersonsControllerTests : IClassFixture<WebApplicationFactory<Startup>>
+    [TestFixture]
+    public class PersonsControllerTests
     {
-        private readonly WebApplicationFactory<Startup> _factory;
+        private WebApplicationFactory<Startup> _factory;
 
-        public PersonsControllerTests(WebApplicationFactory<Startup> factory)
+        [OneTimeSetUp]
+        public void OneTimeSetUp()
         {
-            _factory = factory;
+            _factory = new WebApplicationFactory<Startup>();
         }
 
-        [Theory]
-        [InlineData("/Person")]
+        [TestCase("/Person")]
         public async Task Get_Person_ReturnSuccessStatus(string url)
         {
             // Arrange
