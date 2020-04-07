@@ -26,7 +26,7 @@ namespace Railtown.Data.UnitTest.Service
                     {
                         Geo = new Geo() {
                             Lat = -37.3159,
-                            Long = 81.1496
+                            Lng = 81.1496
                         }
                     }
                 }
@@ -58,7 +58,7 @@ namespace Railtown.Data.UnitTest.Service
                     {
                         Geo = new Geo() {
                             Lat = -37.3159,
-                            Long = 81.1496
+                            Lng = 81.1496
                         }
                     }
                 },
@@ -69,7 +69,7 @@ namespace Railtown.Data.UnitTest.Service
                     {
                         Geo = new Geo() {
                             Lat = -37.3159,
-                            Long = 81.1496
+                            Lng = 81.1496
                         }
                     }
                 }
@@ -86,7 +86,7 @@ namespace Railtown.Data.UnitTest.Service
             // Assert
             Assert.AreNotEqual(personsFurthestApart.Person1.Name, personsFurthestApart.Person2.Name);
             Assert.AreEqual(personsFurthestApart.Person1.Address.Geo.Lat, personsFurthestApart.Person2.Address.Geo.Lat);
-            Assert.AreEqual(personsFurthestApart.Person1.Address.Geo.Long, personsFurthestApart.Person2.Address.Geo.Long);
+            Assert.AreEqual(personsFurthestApart.Person1.Address.Geo.Lng, personsFurthestApart.Person2.Address.Geo.Lng);
         }
 
         [Test]
@@ -102,7 +102,7 @@ namespace Railtown.Data.UnitTest.Service
                     {
                         Geo = new Geo() {
                             Lat = -37.3159,
-                            Long = 81.1496
+                            Lng = 81.1496
                         }
                     }
                 },
@@ -113,7 +113,7 @@ namespace Railtown.Data.UnitTest.Service
                     {
                         Geo = new Geo() {
                             Lat = -43.9509,
-                            Long = -34.4618
+                            Lng = -34.4618
                         }
                     }
                 }
@@ -144,7 +144,7 @@ namespace Railtown.Data.UnitTest.Service
                     {
                         Geo = new Geo() {
                             Lat = -37.3159,
-                            Long = 90
+                            Lng = 90
                         }
                     }
                 },
@@ -155,7 +155,7 @@ namespace Railtown.Data.UnitTest.Service
                     {
                         Geo = new Geo() {
                             Lat = -43.9509,
-                            Long = -34.4618
+                            Lng = -34.4618
                         }
                     }
                 },
@@ -166,7 +166,7 @@ namespace Railtown.Data.UnitTest.Service
                     {
                         Geo = new Geo() {
                             Lat = -37.3159,
-                            Long = -90
+                            Lng = -90
                         }
                     }
                 }
@@ -201,7 +201,7 @@ namespace Railtown.Data.UnitTest.Service
                     {
                         Geo = new Geo() {
                             Lat = 90,
-                            Long = 81.1496
+                            Lng = 81.1496
                         }
                     }
                 },
@@ -212,7 +212,7 @@ namespace Railtown.Data.UnitTest.Service
                     {
                         Geo = new Geo() {
                             Lat = -43.9509,
-                            Long = -34.4618
+                            Lng = -34.4618
                         }
                     }
                 },
@@ -223,7 +223,7 @@ namespace Railtown.Data.UnitTest.Service
                     {
                         Geo = new Geo() {
                             Lat = -90,
-                            Long = 81.1496
+                            Lng = 81.1496
                         }
                     }
                 }

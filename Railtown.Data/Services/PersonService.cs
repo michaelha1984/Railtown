@@ -20,8 +20,8 @@ namespace Railtown.Data.Services
 
         private double GetDistanceBetweenPersons(Person person1, Person person2)
         {
-            var person1Location = new Coordinate(person1.Address.Geo.Lat, person1.Address.Geo.Long);
-            var person2Location = new Coordinate(person2.Address.Geo.Lat, person2.Address.Geo.Long);
+            var person1Location = new Coordinate(person1.Address.Geo.Lat, person1.Address.Geo.Lng);
+            var person2Location = new Coordinate(person2.Address.Geo.Lat, person2.Address.Geo.Lng);
 
             var distance = GeoCalculator.GetDistance(person1Location, person2Location);
             return distance;
