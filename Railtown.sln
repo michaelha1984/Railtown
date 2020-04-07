@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Railtown.API", "Railtown.AP
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Railtown.Data.UnitTest", "Railtown.Data.UnitTest\Railtown.Data.UnitTest.csproj", "{F639A089-4F89-440A-94F7-1FA2FAF11161}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Railtown.API.FunctionTests", "Railtown.API.FunctionTests\Railtown.API.FunctionTests.csproj", "{7B5B8CF9-58C4-4CD5-879F-12534FB6D06E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Railtown.API.FunctionalTests", "Railtown.API.FunctionTests\Railtown.API.FunctionalTests.csproj", "{7B5B8CF9-58C4-4CD5-879F-12534FB6D06E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
