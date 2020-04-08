@@ -12,7 +12,12 @@ namespace Railtown.Data.Repository
 {
     public class PersonRepository : IPersonRepository
     {
+        private readonly IPersonsValidator _personsValidator;
 
+        public PersonRepository(IPersonsValidator personsValidator)
+        {
+            _personsValidator = personsValidator;
+        }
         public async Task<List<Person>> GetAllPersonsAsync()
         {
             var client = new RestClient("https://jsonplaceholder.typicode.com/");
@@ -31,25 +36,9 @@ namespace Railtown.Data.Repository
                 // response.StatusCode
             }
 
-            var validPersons = new List<Person>();
-
-            foreach (var person in response.Data)
-            {
-                var results = new List<ValidationResult>();
-                var validationContext = new ValidationContext(person);
-                var isValid = Validator.TryValidateObject(person, validationContext, results, true);
-
-                if (!isValid)
-                {
-                    // Do something with bad data                   
-                }
-                else
-                {
-                    validPersons.Add(person);
-                }
-            }
-
+            var validPersons = _personsValidator.ValidatePersons(response.Data);
             return validPersons;
         }
+
     }
 }
