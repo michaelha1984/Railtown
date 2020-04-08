@@ -4,6 +4,7 @@ using RestSharp;
 using RestSharp.Serializers.NewtonsoftJson;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -18,14 +19,37 @@ namespace Railtown.Data.Repository
             client.UseNewtonsoftJson(new JsonSerializerSettings() 
             {
                 MissingMemberHandling = MissingMemberHandling.Error
-            }); 
+            });
 
             var request = new RestRequest("users", Method.GET, DataFormat.Json);
             
             var response = await client.ExecuteAsync<List<Person>>(request);
-            //response.StatusCode;
+            
+            if (!response.IsSuccessful)
+            {
+                throw new Exception(); // Do something else
+                // response.StatusCode
+            }
 
-            return response.Data;
+            var validPersons = new List<Person>();
+
+            foreach (var person in response.Data)
+            {
+                var results = new List<ValidationResult>();
+                var validationContext = new ValidationContext(person);
+                var isValid = Validator.TryValidateObject(person, validationContext, results, true);
+
+                if (!isValid)
+                {
+                    // Do something with bad data                   
+                }
+                else
+                {
+                    validPersons.Add(person);
+                }
+            }
+
+            return validPersons;
         }
     }
 }
