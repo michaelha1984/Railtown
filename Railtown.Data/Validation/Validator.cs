@@ -16,26 +16,5 @@ namespace Railtown.Data.Validation
 
             return (isValid, results);
         }
-
-        public List<T> Validate(IEnumerable<T> models)
-        {
-            var valid = new List<T>();
-
-            foreach (var model in models)
-            {
-                var (isValid, results) = Validate(model);
-
-                if (!isValid)
-                {
-                    // Do something with bad data                   
-                }
-                else
-                {
-                    valid.Add(model);
-                }
-            }
-
-            return valid;
-        }
     }
 }

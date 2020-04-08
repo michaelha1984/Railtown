@@ -30,6 +30,7 @@ namespace Railtown.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<IPersonRepository, PersonRepository>();
+            services.AddTransient<IPersonValidator, PersonValidator>();
             services.AddTransient<IPersonService, PersonService>();
 
             services.AddAutoMapper(typeof(Startup));

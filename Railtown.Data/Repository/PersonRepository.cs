@@ -13,11 +13,11 @@ namespace Railtown.Data.Repository
 {
     public class PersonRepository : IPersonRepository
     {
-        private readonly Validator<Person> _personsValidator;
+        private readonly IPersonValidator _personValidator;
 
-        public PersonRepository(Validator<Person> personsValidator)
+        public PersonRepository(IPersonValidator personValidator)
         {
-            _personsValidator = personsValidator;
+            _personValidator = personValidator;
         }
 
         public async Task<List<Person>> GetAllPersonsAsync()
@@ -34,11 +34,12 @@ namespace Railtown.Data.Repository
             
             if (!response.IsSuccessful)
             {
-                throw new Exception(); // Do something else
+                throw new Exception(); //TODO: Do something else
                 // response.StatusCode
             }
 
-            var validPersons = _personsValidator.Validate(response.Data);
+            var validPersons = _personValidator.ValidatePersons(response.Data);
+
             return validPersons;
         }
 
