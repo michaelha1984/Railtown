@@ -9,14 +9,18 @@ namespace Railtown.Data.Repository
 {
     public class PersonRepository : IPersonRepository
     {
+
         public async Task<List<Person>> GetAllPersonsAsync()
         {
-            var client = new RestClient("https://jsonplaceholder.typicode.com/");
+            var client = new RestClient("https://jsonplaceholder.typicode.com/")
+                .UseSerializer(() => new JsonNetSerializer());
 
-            var request = new RestRequest("users", DataFormat.Json);
+            var request = new RestRequest("users", Method.GET, DataFormat.Json);
             
-            var response = await client.GetAsync<List<Person>>(request);
-            return response;
+            var response = await client.ExecuteAsync<List<Person>>(request);
+            //response.StatusCode;
+
+            return response.Data;
         }
     }
 }
