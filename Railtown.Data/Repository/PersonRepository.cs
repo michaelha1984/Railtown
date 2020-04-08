@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Railtown.Data.Models;
+using Railtown.Data.Validation;
 using RestSharp;
 using RestSharp.Serializers.NewtonsoftJson;
 using System;
@@ -12,12 +13,13 @@ namespace Railtown.Data.Repository
 {
     public class PersonRepository : IPersonRepository
     {
-        private readonly IPersonsValidator _personsValidator;
+        private readonly Validator<Person> _personsValidator;
 
-        public PersonRepository(IPersonsValidator personsValidator)
+        public PersonRepository(Validator<Person> personsValidator)
         {
             _personsValidator = personsValidator;
         }
+
         public async Task<List<Person>> GetAllPersonsAsync()
         {
             var client = new RestClient("https://jsonplaceholder.typicode.com/");
@@ -36,7 +38,7 @@ namespace Railtown.Data.Repository
                 // response.StatusCode
             }
 
-            var validPersons = _personsValidator.ValidatePersons(response.Data);
+            var validPersons = _personsValidator.Validate(response.Data);
             return validPersons;
         }
 

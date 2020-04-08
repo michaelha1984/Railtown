@@ -1,5 +1,7 @@
-﻿using Railtown.Data.Repository;
+﻿using Railtown.Data.Models;
+using Railtown.Data.Repository;
 using Railtown.Data.Services;
+using Railtown.Data.Validation;
 using System;
 using System.Threading.Tasks;
 
@@ -9,8 +11,9 @@ namespace Railtown
     {
         static async Task Main(string[] args)
         {
-            var personRepository = new PersonRepository();
-            var personService = new PersonService(personRepository);
+            var validator = new Validator<Person>();
+            var repository = new PersonRepository(validator);
+            var personService = new PersonService(repository);
           
             var personsFurthestApart = await personService.GetPersonsFurthestApartAsync();
             Console.WriteLine($"{personsFurthestApart.Person1.Name} " +

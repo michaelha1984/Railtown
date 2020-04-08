@@ -1,5 +1,7 @@
 ﻿using NUnit.Framework;
+using Railtown.Data.Models;
 using Railtown.Data.Repository;
+using Railtown.Data.Validation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +17,8 @@ namespace Railtown.Data.UnitTest.Repository
         public async Task GetAllPersonsAsync()
         {
             // Arrange
-            var repository = new PersonRepository();
+            var validator = new Validator<Person>();
+            var repository = new PersonRepository(validator);
 
             // Act
             var persons = await repository.GetAllPersonsAsync();
